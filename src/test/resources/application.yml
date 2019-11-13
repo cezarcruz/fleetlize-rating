@@ -12,6 +12,7 @@ fleetlize:
   jms:
     topic:
       car-creation: car-creation
+      book-creation: book-creation
 
 logging:
   org.hibernate.SQL: DEBUG
