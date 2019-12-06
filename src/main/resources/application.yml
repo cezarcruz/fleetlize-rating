@@ -24,16 +24,17 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-  #      show-sql: true
-  #    properties:
-  #      hibernate:
-  #        format_sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: car-creation
+          group: car-queue
   main:
     lazy:
       initialization: true
-
-fleetlize:
-  jms:
-    topic:
-      car-creation: car-creation
-      book-creation: book-creation
